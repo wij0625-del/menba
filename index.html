@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="forest">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>門把 Plumeria 🌿 • 森林花草系個人所</title>
+
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description" content="門把 (@plumeria_0.0) 的森林系花草個人網站。在優化月相之前於林間靜候花開。主推先知月相、黃占、愚牙、光遇老旅人與原創求生者書籍修復師多里安。">
+    <meta name="keywords" content="門把, plumeria, 森林系, 花草風格, 第五人格, 月相, 先知, 光遇, 盧卡, 同人插畫">
+    <meta property="og:title" content="門把 Plumeria 🌿 • 森林花草系個人所">
+    <meta property="og:description" content="林中微風，花草相伴。在第五人格優化月相之前，我是不會死的。">
+    <meta property="og:type" content="website">
+
+    <!-- Elegant Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Kaisei+Decol:wght@500;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+       門把 Plumeria • 森林系花草美學設計系統 (Botanical Design Tokens)
+       ========================================================================== */
+        :root {
+            /* Theme 1: 森林系翠木與初綻花草 (Forest Sanctuary - Default) */
+            --bg-canvas: #F8F9F5;
+            --bg-ambient: radial-gradient(circle at 12% 15%, rgba(163, 177, 138, 0.28) 0%, transparent 40%),
+                radial-gradient(circle at 88% 85%, rgba(221, 161, 94, 0.2) 0%, transparent 45%),
+                #F8F9F5;
+            --card-bg: rgba(255, 255, 255, 0.88);
+            --card-bg-hover: #FFFFFF;
+            --card-border: rgba(58, 90, 64, 0.2);
+            --card-border-solid: #4B6E53;
+
+            --accent-deep: #283618;
+            --accent-forest: #3A5A40;
+            --accent-sage: #588157;
+            --accent-leaf: #A3B18A;
+            --accent-leaf-subtle: rgba(163, 177, 138, 0.25);
+            --accent-flower: #E07A5F;
+            --accent-amber: #DDA15E;
+
+            --text-title: #1E2D1E;
+            --text-body: #344A39;
+            --text-muted: #647B6A;
+            --text-quote: #2E4532;
+
+            --shadow-soft: 0 10px 30px -10px rgba(40, 54, 24, 0.12), 0 4px 12px rgba(40, 54, 24, 0.05);
+            --shadow-hover: 0 18px 40px -12px rgba(40, 54, 24, 0.18), 0 8px 16px rgba(40, 54, 24, 0.08);
+            --shadow-retro: 3px 3px 0px #3A5A40;
+
+            --font-serif: 'Kaisei Decol', 'Noto Serif TC', 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+            --font-en: 'Cormorant Garamond', Georgia, serif;
+
+            --radius-sm: 10px;
+            --radius-md: 18px;
+            --radius-lg: 28px;
+            --radius-full: 9999px;
+        }
+
+        /* Theme 2: 林間月夜 (Moonlit Forest Night) */
+        [data-theme="moonlight"] {
+            --bg-canvas: #0E1612;
+            --bg-ambient: radial-gradient(circle at 20% 20%, rgba(58, 90, 64, 0.35) 0%, transparent 45%),
+                radial-gradient(circle at 80% 80%, rgba(221, 161, 94, 0.18) 0%, transparent 40%),
+                #0E1612;
+            --card-bg: rgba(22, 33, 27, 0.85);
+            --card-bg-hover: rgba(28, 42, 34, 0.95);
+            --card-border: rgba(163, 177, 138, 0.25);
+            --card-border-solid: #588157;
+
+            --accent-deep: #A3B18A;
+            --accent-forest: #81A880;
+            --accent-sage: #9AB899;
+            --accent-leaf: #3A5A40;
+            --accent-leaf-subtle: rgba(88, 129, 87, 0.3);
+            --accent-flower: #F28482;
+            --accent-amber: #F4A261;
+
+            --text-title: #F2F4F1;
+            --text-body: #C9D4CC;
+            --text-muted: #8EA092;
+            --text-quote: #D7E3DA;
+
+            --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 18px 40px -12px rgba(0, 0, 0, 0.7);
+            --shadow-retro: 3px 3px 0px #1E2D1E;
+        }
+
+        /* Theme 3: 雞蛋花暖陽 (Plumeria Blossom & Warm Sunlight) */
+        [data-theme="blossom"] {
+            --bg-canvas: #FDFBF7;
+            --bg-ambient: radial-gradient(circle at 15% 15%, rgba(244, 211, 94, 0.25) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(242, 132, 130, 0.2) 0%, transparent 40%),
+                #FDFBF7;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --card-bg-hover: #FFFFFF;
+            --card-border: rgba(224, 122, 95, 0.2);
+            --card-border-solid: #DDA15E;
+
+            --accent-deep: #4A3525;
+            --accent-forest: #6B4E3D;
+            --accent-sage: #A3B18A;
+            --accent-leaf: #E9D8A6;
+            --accent-leaf-subtle: rgba(244, 211, 94, 0.25);
+            --accent-flower: #E07A5F;
+            --accent-amber: #EE9B00;
+
+            --text-title: #3D2619;
+            --text-body: #5C4033;
+            --text-muted: #8C6D5A;
+            --text-quote: #4A3022;
+
+            --shadow-soft: 0 10px 30px -10px rgba(74, 53, 37, 0.1);
+            --shadow-hover: 0 18px 40px -12px rgba(74, 53, 37, 0.16);
+            --shadow-retro: 3px 3px 0px #DDA15E;
+        }
+
+        /* ----------------------------------------------------------------------
+       Base Elements & Botanical Reset
+       ---------------------------------------------------------------------- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-canvas);
+            background-image: var(--bg-ambient);
+            background-attachment: fixed;
+            color: var(--text-body);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Falling Petals & Botanical Leaves Canvas */
+        #forestPetalsCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        button {
+            font-family: inherit;
+            border: none;
+            background: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ----------------------------------------------------------------------
+       Header & Botanical Navbar
+       ---------------------------------------------------------------------- */
+        .forest-nav {
+            position: sticky;
+            top: 1.25rem;
+            z-index: 100;
+            margin-bottom: 2.5rem;
+        }
+
+        .nav-leaf-bar {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-soft);
+            padding: 0.65rem 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .nav-brand-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text-title);
+            letter-spacing: 0.04em;
+        }
+
+        .plumeria-icon {
+            font-size: 1.25rem;
+            animation: gentleSway 4s ease-in-out infinite;
+        }
+
+        .nav-tools {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .tool-circle-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .tool-circle-btn:hover {
+            transform: translateY(-2px) scale(1.08);
+            background: var(--accent-leaf-subtle);
+            border-color: var(--accent-sage);
+        }
+
+        /* ----------------------------------------------------------------------
+       Hero Botanical Sanctuary Profile Card
+       ---------------------------------------------------------------------- */
+        .hero-sanctuary-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            padding: 2.75rem 2rem 2.25rem;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Top Botanical Laurel Accent */
+        .hero-sanctuary-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg,
+                    var(--accent-leaf) 0%,
+                    var(--accent-sage) 50%,
+                    var(--accent-amber) 100%);
+        }
+
+        .avatar-wreath {
+            position: relative;
+            width: 124px;
+            height: 124px;
+            margin: 0 auto 1.25rem;
+        }
+
+        .avatar-ring {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid var(--accent-sage);
+            padding: 4px;
+            background: #FFFFFF;
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .avatar-wreath:hover .avatar-ring {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        .avatar-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .flower-badge {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            background: #FFFFFF;
+            border: 1.5px solid var(--accent-sage);
+            border-radius: var(--radius-full);
+            padding: 0.15rem 0.55rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent-forest);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            white-space: nowrap;
+        }
+
+        [data-theme="moonlight"] .flower-badge {
+            background: #1B2920;
+        }
+
+        .hero-name {
+            font-family: var(--font-serif);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--text-title);
+            letter-spacing: 0.04em;
+            margin-bottom: 0.35rem;
+        }
+
+        .hero-sub-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            font-family: var(--font-en);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-quote-box {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--text-quote);
+            background: var(--accent-leaf-subtle);
+            border: 1px dashed var(--accent-sage);
+            border-radius: var(--radius-md);
+            padding: 0.85rem 1.6rem;
+            display: inline-block;
+            max-width: 580px;
+            margin: 0 auto 1.4rem;
+            line-height: 1.6;
+        }
+
+        /* Minimalist Forest Tags */
+        .forest-tag-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .forest-tag {
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 0.3rem 0.85rem;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            color: var(--text-body);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Concise Lunar Wait Badge */
+        .lunar-leaf-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-full);
+            padding: 0.45rem 1.25rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 1.5rem;
+        }
+
+        .lunar-days-num {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            color: var(--accent-flower);
+            letter-spacing: 0.05em;
+        }
+
+        /* Social Connections */
+        .forest-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .forest-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            padding: 0.55rem 1.25rem;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            color: var(--text-title);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .forest-link-btn:hover {
+            transform: translateY(-2px);
+            background: var(--accent-forest);
+            color: #FFFFFF;
+            border-color: var(--accent-forest);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* ----------------------------------------------------------------------
+       Botanical Navigation Tabs (Minimalist & Leaf Shaped)
+       ---------------------------------------------------------------------- */
+        .botanical-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .leaf-tab-btn {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            color: var(--text-muted);
+            box-shadow: var(--shadow-soft);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.25s ease;
+        }
+
+        .leaf-tab-btn:hover {
+            color: var(--accent-forest);
+            border-color: var(--accent-sage);
+            transform: translateY(-2px);
+        }
+
+        .leaf-tab-btn.active {
+            background: var(--accent-forest);
+            color: #FFFFFF;
+            border-color: var(--accent-forest);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* Tab Content Panels */
+        .botanical-panel {
+            display: none;
+            animation: fadeInMist 0.4s ease;
+        }
+
+        .botanical-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeInMist {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ----------------------------------------------------------------------
+       Botanical Card Components (Clean, Mori, Glassmorphic)
+       ---------------------------------------------------------------------- */
+        .forest-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-soft);
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .forest-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-leaf-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .leaf-icon-pill {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--accent-leaf-subtle);
+            border: 1px solid var(--accent-sage);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .card-title-text {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-title);
+            letter-spacing: 0.02em;
+        }
+
+        .duo-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        /* Minimalist Bullet List */
+        .forest-bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            font-size: 0.95rem;
+        }
+
+        .forest-bullet-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .forest-bullet-list li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+            font-size: 0.85rem;
+            top: 1px;
+        }
+
+        /* ----------------------------------------------------------------------
+       CP Flowers Grid
+       ---------------------------------------------------------------------- */
+        .cp-flower-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cp-flower-chip {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-sm);
+            padding: 0.85rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.25s ease;
+        }
+
+        .cp-flower-chip:hover {
+            border-color: var(--accent-sage);
+            background: var(--accent-leaf-subtle);
+            transform: translateY(-2px);
+        }
+
+        .cp-flower-icon {
+            font-size: 1.5rem;
+        }
+
+        .cp-flower-name {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            color: var(--text-title);
+        }
+
+        .cp-flower-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* ----------------------------------------------------------------------
+       Botanical Gallery (The 5 Artworks in Elegant Frames)
+       ---------------------------------------------------------------------- */
+        .gallery-filter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .g-filter-btn {
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.35rem 1rem;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
+
+        .g-filter-btn.active {
+            background: var(--accent-forest);
+            color: #FFFFFF;
+            border-color: var(--accent-forest);
+        }
+
+        .botanical-art-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .botanical-art-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+
+        .botanical-art-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-sage);
+        }
+
+        .art-frame-box {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            position: relative;
+            background: #EFEFEA;
+            overflow: hidden;
+        }
+
+        .art-frame-box.tall {
+            aspect-ratio: 3 / 4;
+        }
+
+        .art-flower-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.7);
+            transition: transform 0.4s ease;
+        }
+
+        .botanical-art-card:hover .art-flower-img {
+            transform: scale(1.06);
+        }
+
+        .art-corner-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-full);
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-forest);
+            padding: 0.15rem 0.55rem;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .art-card-details {
+            padding: 1.15rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            flex-grow: 1;
+        }
+
+        .art-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-title);
+        }
+
+        .art-card-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .art-bottom-meta {
+            margin-top: auto;
+            padding-top: 0.65rem;
+            border-top: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .heart-like-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--accent-flower);
+            transition: transform 0.2s ease;
+        }
+
+        .heart-like-btn:hover {
+            transform: scale(1.2);
+        }
+
+        /* ----------------------------------------------------------------------
+       Interactive Forest Widgets (Leaf Divination & Capybara Garden)
+       ---------------------------------------------------------------------- */
+        .interactive-shrine-box {
+            background: var(--card-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            padding: 2.25rem 1.75rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .leaf-fortune-orb {
+            width: 120px;
+            height: 120px;
+            margin: 1.25rem auto;
+            background: var(--accent-leaf-subtle);
+            border: 2px solid var(--accent-sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.8rem;
+            box-shadow: var(--shadow-soft);
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s;
+        }
+
+        .leaf-fortune-orb:hover {
+            transform: scale(1.08) rotate(-4deg);
+            background: var(--accent-leaf);
+        }
+
+        .leaf-fortune-orb.swaying {
+            animation: leafShake 0.6s ease-in-out;
+        }
+
+        @keyframes leafShake {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            30% {
+                transform: scale(1.15) rotate(10deg);
+            }
+
+            70% {
+                transform: scale(1.15) rotate(-10deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .fortune-result-plaque {
+            background: var(--card-bg);
+            border: 1px dashed var(--accent-sage);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-top: 1.5rem;
+            min-height: 85px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .forest-button {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            background: var(--accent-forest);
+            border: 1px solid var(--accent-forest);
+            border-radius: var(--radius-full);
+            padding: 0.65rem 1.8rem;
+            box-shadow: var(--shadow-soft);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-top: 1rem;
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .forest-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            background: var(--accent-deep);
+        }
+
+        /* Capybara Citrus Garden */
+        .capy-sanctuary {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.85rem;
+            margin-top: 1.25rem;
+        }
+
+        .citrus-leaves-tower {
+            font-size: 1.7rem;
+            letter-spacing: -4px;
+            min-height: 38px;
+        }
+
+        .capy-forest-sprite {
+            font-size: 4.5rem;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+        }
+
+        .capy-forest-sprite:hover {
+            transform: scale(1.12) rotate(3deg);
+        }
+
+        /* ----------------------------------------------------------------------
+       Forest Tree Hole Guestbook (樹洞留箋壁)
+       ---------------------------------------------------------------------- */
+        .treehole-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .treehole-input,
+        .treehole-textarea {
+            font-family: inherit;
+            font-size: 0.92rem;
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-sm);
+            padding: 0.75rem 1rem;
+            background: var(--card-bg);
+            color: var(--text-title);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .treehole-input:focus,
+        .treehole-textarea:focus {
+            border-color: var(--accent-sage);
+        }
+
+        .treehole-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .tree-leaf-note {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        .tree-leaf-note:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .note-leaf-sender {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            color: var(--text-title);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .note-leaf-body {
+            font-size: 0.88rem;
+            color: var(--text-body);
+            line-height: 1.55;
+        }
+
+        .note-leaf-time {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: auto;
+        }
+
+        /* ----------------------------------------------------------------------
+       Lightbox Fullscreen Modal
+       ---------------------------------------------------------------------- */
+        .forest-lightbox-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(14, 22, 18, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .forest-lightbox-modal.open {
+            display: flex;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .lightbox-inner-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .lightbox-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--card-border);
+            background: var(--accent-leaf-subtle);
+        }
+
+        .lightbox-content-area {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: auto;
+        }
+
+        .lightbox-large-photo {
+            max-width: 100%;
+            max-height: 65vh;
+            object-fit: contain;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--card-border);
+            background: #FFFFFF;
+        }
+
+        /* ----------------------------------------------------------------------
+       Footer
+       ---------------------------------------------------------------------- */
+        .forest-footer {
+            margin-top: 4.5rem;
+            padding: 3.5rem 0;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+        }
+
+        .footer-botanical-quote {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            color: var(--text-quote);
+            margin-bottom: 1rem;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-botanical-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        @keyframes gentleSway {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(6deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero-sanctuary-card {
+                padding: 2.25rem 1.25rem 1.75rem;
+            }
+
+            .hero-name {
+                font-size: 2rem;
+            }
+
+            .hero-quote-box {
+                font-size: 1.05rem;
+                padding: 0.75rem 1.1rem;
+            }
+
+            .leaf-tab-btn {
+                padding: 0.5rem 0.9rem;
+                font-size: 0.88rem;
+            }
+
+            .botanical-art-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Falling Petals & Botanical Canvas -->
+    <canvas id="forestPetalsCanvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <header class="forest-nav">
+        <div class="container">
+            <nav class="nav-leaf-bar" aria-label="Main Navigation">
+                <a href="#home" class="nav-brand-title">
+                    <span class="plumeria-icon">🌸</span>
+                    <span>門把 · Plumeria</span>
+                </a>
+                <div class="nav-tools">
+                    <button class="tool-circle-btn" id="soundToggleBtn" aria-label="切換森林音效"
+                        title="開啟/關閉輕柔風鈴與雨露音效">🔔</button>
+                    <button class="tool-circle-btn" id="themeToggleBtn" aria-label="切換森林季節"
+                        title="點擊切換森林主題風格">🌿</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container" id="home">
+
+        <!-- Hero Botanical Profile Card -->
+        <section class="hero-sanctuary-card" aria-label="Creator Profile">
+
+            <!-- Laurel Avatar with Blooming Plumeria Flower -->
+            <div class="avatar-wreath">
+                <div class="avatar-ring">
+                    <img src="https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/icons/ac2f3fcf-22c1-4130-bbe1-41eee5b16a17.jpeg&width=240"
+                        alt="門把的大頭貼" class="avatar-photo" id="userAvatar"
+                        onerror="this.onerror=null; this.src='../drive_assets/IMG_4479.PNG';">
+                </div>
+                <div class="flower-badge">
+                    <span>🌸</span><span>頭像日醬繪</span>
+                </div>
+            </div>
+
+            <h1 class="hero-name">
+                門把 ✌️
+            </h1>
+
+            <div class="hero-sub-meta">
+                <span>PLUMERIA</span>
+                <span>•</span>
+                <span>@plumeria_0.0</span>
+                <span>•</span>
+                <span>LIT.LINK / menba0625</span>
+            </div>
+
+            <!-- Poetic Signature Quote -->
+            <div class="hero-quote-box">
+                「在第五人格優化月相之前，我是不會死的。」
+            </div>
+
+            <!-- Concise Lunar Optimization Badge -->
+            <div class="lunar-leaf-badge" id="lunarBadge">
+                <span>🌕</span>
+                <span>月相優化守候：</span>
+                <span class="lunar-days-num" id="lunarDaysCount">計算中...</span>
+                <span>｜ 今日尚未優化 🍃</span>
+            </div>
+
+            <!-- Minimalist Concise Tags -->
+            <div class="forest-tag-row">
+                <span class="forest-tag">🦉 先知 · 月相</span>
+                <span class="forest-tag">🍃 氣象學家 · 牙醫</span>
+                <span class="forest-tag">🐙 黃占 · 愚牙 · 弓氣</span>
+                <span class="forest-tag">☁️ 光遇聖島老旅人</span>
+                <span class="forest-tag">🌸 隨緣自萌西批姐</span>
+            </div>
+
+            <!-- Quick Social Connections -->
+            <div class="forest-social-links">
+                <a href="https://www.threads.net/@plumeria_0.0" target="_blank" rel="noopener noreferrer"
+                    class="forest-link-btn">
+                    <span>🧵</span><span>Threads 主帳 (@plumeria_0.0)</span>
+                </a>
+                <a href="https://lit.link/zh-tw/menba0625" target="_blank" rel="noopener noreferrer"
+                    class="forest-link-btn">
+                    <span>🔗</span><span>Lit.Link 完整檔案</span>
+                </a>
+                <a href="https://www.threads.net/@mie_pu_0.0" target="_blank" rel="noopener noreferrer"
+                    class="forest-link-btn">
+                    <span>🌱</span><span>次帳 (@mie_pu_0.0)</span>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- Botanical Navigation Tabs -->
+        <nav class="botanical-tabs" aria-label="Content Tabs">
+            <button class="leaf-tab-btn active" data-tab="tab-about" id="tabBtnAbout">
+                <span>🌿</span><span>森林名片</span>
+            </button>
+            <button class="leaf-tab-btn" data-tab="tab-idv" id="tabBtnIdv">
+                <span>🦉</span><span>月相與莊園</span>
+            </button>
+            <button class="leaf-tab-btn" data-tab="tab-gallery" id="tabBtnGallery">
+                <span>🎨</span><span>典藏畫廊</span>
+            </button>
+            <button class="leaf-tab-btn" data-tab="tab-oc" id="tabBtnOc">
+                <span>📜</span><span>求生者OC多里安</span>
+            </button>
+            <button class="leaf-tab-btn" data-tab="tab-sky" id="tabBtnSky">
+                <span>☁️</span><span>光遇雲端</span>
+            </button>
+            <button class="leaf-tab-btn" data-tab="tab-interactive" id="tabBtnInteractive">
+                <span>🔮</span><span>占卜與水豚</span>
+            </button>
+            <button class="leaf-tab-btn" data-tab="tab-guestbook" id="tabBtnGuestbook">
+                <span>💌</span><span>樹洞留箋</span>
+            </button>
+        </nav>
+
+        <!-- ====================================================================
+         Tab Panel 1: 森林名片 (Concise About & Boundaries)
+         ==================================================================== -->
+        <section class="botanical-panel active" id="tab-about" aria-labelledby="tabBtnAbout">
+            <div class="forest-card">
+                <div class="card-leaf-header">
+                    <div class="leaf-icon-pill">🌿</div>
+                    <h2 class="card-title-text">你好，這裡是門把的森林小居</h2>
+                </div>
+                <p style="margin-bottom: 0.8rem; font-size: 1.02rem;">
+                    常駐於<strong>第五人格 ｜ 光遇 ｜ 世界計畫</strong>，只要電波相通，隨時歡迎直戳交流。
+                </p>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.65;">
+                    • <strong>社交守則</strong>：電波 ＞ 屬性。盡量別叫我老師，我只想跟大家當盆友 &gt;&lt; ！<br>
+                    • <strong>同好態度</strong>：西批姐到哪都在找飯吃，沒興趣參與 CP 戰爭，不會打任何 CP，只專注自己家圈地自萌。
+                </p>
+            </div>
+
+            <div class="duo-columns">
+                <div class="forest-card">
+                    <div class="card-leaf-header">
+                        <div class="leaf-icon-pill">🍂</div>
+                        <h3 class="card-title-text" style="font-size: 1.15rem;">交友避雷指南</h3>
+                    </div>
+                    <ul class="forest-bullet-list">
+                        <li>不喜歡只推黯白卻自稱占廚的人，離我遠點。</li>
+                        <li>討厭反串黑，不喜歡看到惡意貶低角色或 CP 的言論。</li>
+                        <li><strong>拒絕認識</strong>：我推夢原男女 / 騎士夢女 / 深空玩家。</li>
+                    </ul>
+                </div>
+
+                <div class="forest-card">
+                    <div class="card-leaf-header">
+                        <div class="leaf-icon-pill">🍃</div>
+                        <h3 class="card-title-text" style="font-size: 1.15rem;">關於我的小習慣</h3>
+                    </div>
+                    <ul class="forest-bullet-list">
+                        <li>曬歐與 CP 相關產出不會刻意防雷。</li>
+                        <li>遊戲操作很菜，主要享受摸金、公圖看風景。</li>
+                        <li>偶爾畫圖手殘塗鴉，同好自得其樂。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+         Tab Panel 2: 第五人格與月相 (Identity V & Seer)
+         ==================================================================== -->
+        <section class="botanical-panel" id="tab-idv" aria-labelledby="tabBtnIdv">
+            <div class="forest-card">
+                <div class="card-leaf-header">
+                    <div class="leaf-icon-pill">🦉</div>
+                    <h2 class="card-title-text">莊園微風 · 角色與日常</h2>
+                </div>
+                <p style="margin-bottom: 0.85rem; font-size: 0.98rem; line-height: 1.7;">
+                    • <strong>推角</strong>：先知（月相）、氣象學家、牙醫。<br>
+                    • <strong>屬性</strong>：殮、坎、傭、火、騎都是 1。<br>
+                    • <strong>玩法</strong>：喜歡單人自己玩，半個劇情黨，沉迷公圖與摸金；特別喜愛<strong>日本第五人格舞台劇</strong>，同好大歡迎！
+                </p>
+            </div>
+
+            <div class="forest-card">
+                <div class="card-leaf-header">
+                    <div class="leaf-icon-pill">🌸</div>
+                    <h3 class="card-title-text" style="font-size: 1.2rem;">本命 CP 花草連線</h3>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    常駐糧倉：黃占、愚牙，配有一點點弓氣與偶爾傭占。西批姐用心產出！
+                </p>
+
+                <div class="cp-flower-grid">
+                    <div class="cp-flower-chip">
+                        <span class="cp-flower-icon">🐙</span>
+                        <div>
+                            <div class="cp-flower-name">黃占</div>
+                            <div class="cp-flower-desc">黃衣之主 × 先知</div>
+                        </div>
+                    </div>
+                    <div class="cp-flower-chip">
+                        <span class="cp-flower-icon">💎</span>
+                        <div>
+                            <div class="cp-flower-name">愚牙</div>
+                            <div class="cp-flower-desc">愚人金 × 牙醫</div>
+                        </div>
+                    </div>
+                    <div class="cp-flower-chip">
+                        <span class="cp-flower-icon">🏹</span>
+                        <div>
+                            <div class="cp-flower-name">弓氣</div>
+                            <div class="cp-flower-desc">弓箭手 × 氣象學家</div>
+                        </div>
+                    </div>
+                    <div class="cp-flower-chip">
+                        <span class="cp-flower-icon">🩹</span>
+                        <div>
+                            <div class="cp-flower-name">傭占</div>
+                            <div class="cp-flower-desc">傭兵 × 先知</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem; text-align: center;">
+                    <img src="https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/profile_links/single_images/83bfe955-5c74-4288-b9e1-49613abe557f.png&width=960"
+                        alt="CP連線圖"
+                        style="border: 1px solid var(--card-border); border-radius: var(--radius-sm); margin: 0 auto; max-width: 100%; box-shadow: var(--shadow-soft);"
+                        onerror="this.style.display='none';">
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+         Tab Panel 3: 典藏畫廊 (Art Gallery)
+         ==================================================================== -->
+        <section class="botanical-panel" id="tab-gallery" aria-labelledby="tabBtnGallery">
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <h2
+                    style="font-family: var(--font-serif); font-size: 1.55rem; color: var(--text-title); margin-bottom: 0.35rem;">
+                    🎨 林間花草畫廊
+                </h2>
+                <p style="color: var(--text-muted); font-size: 0.92rem;">
+                    收錄精選同人立繪、暖萌 Q 版手繪與珍藏畫作（點選可全螢幕高清放大賞析）
+                </p>
+            </div>
+
+            <div class="gallery-filter-nav" role="group" aria-label="Gallery Filters">
+                <button class="g-filter-btn active" data-filter="all">全部</button>
+                <button class="g-filter-btn" data-filter="standee">角色立繪</button>
+                <button class="g-filter-btn" data-filter="chibi">Q版插畫</button>
+                <button class="g-filter-btn" data-filter="portrait">手繪人物</button>
+            </div>
+
+            <div class="botanical-art-grid" id="artGrid">
+
+                <!-- Artwork 1: Luca Academic Blue Standee -->
+                <article class="botanical-art-card" data-category="standee" data-id="luca-academic">
+                    <div class="art-frame-box tall">
+                        <img src="../drive_assets/IMG_4140.PNG" alt="盧卡·巴爾薩澤 - 學院制服立繪" class="art-flower-img"
+                            loading="lazy"
+                            onerror="this.onerror=null; this.src='https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/profile_links/single_images/f7bb887e-b9c1-48da-98d9-f7fed0f10757.png&width=960';">
+                        <div class="art-corner-tag">高清立繪</div>
+                    </div>
+                    <div class="art-card-details">
+                        <h3 class="art-card-title">學院風華 · 靈感之冠</h3>
+                        <p class="art-card-text">深藍貴族學院風大衣、皮質量尺腰帶與工具袋，眼神專注優雅的天才發明家。</p>
+                        <div class="art-bottom-meta">
+                            <span class="forest-tag" style="padding: 0.15rem 0.6rem; font-size: 0.75rem;">立繪</span>
+                            <button class="heart-like-btn" title="給這幅作品一個讚">🌸 <span
+                                    class="like-num">128</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artwork 2: Luca Classic Prisoner Standee -->
+                <article class="botanical-art-card" data-category="standee" data-id="luca-classic">
+                    <div class="art-frame-box tall">
+                        <img src="../drive_assets/IMG_4142.PNG" alt="盧卡·巴爾薩澤 - 初始囚徒立繪" class="art-flower-img"
+                            loading="lazy"
+                            onerror="this.onerror=null; this.src='https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/profile_links/single_images/831a75b0-353a-49fd-bd48-ed352910e814.png&width=960';">
+                        <div class="art-corner-tag">高清立繪</div>
+                    </div>
+                    <div class="art-card-details">
+                        <h3 class="art-card-title">天才執著 · 經典風衣</h3>
+                        <p class="art-card-text">磨損的灰白長大褂與工作手套，背負滄桑卻永遠執著於真理的發明家靈魂。</p>
+                        <div class="art-bottom-meta">
+                            <span class="forest-tag" style="padding: 0.15rem 0.6rem; font-size: 0.75rem;">立繪</span>
+                            <button class="heart-like-btn" title="給這幅作品一個讚">🌸 <span
+                                    class="like-num">115</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artwork 3: White Flower Chibi Luca -->
+                <article class="botanical-art-card" data-category="chibi" data-id="luca-chibi-flower">
+                    <div class="art-frame-box">
+                        <img src="../drive_assets/IMG_4479.PNG" alt="白茶花語 Q版盧卡" class="art-flower-img" loading="lazy"
+                            onerror="this.onerror=null; this.src='https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/profile_links/multiple_images/ff499e40-3270-4712-85c3-73e10c4cf8dc.jpeg&width=400';">
+                        <div class="art-corner-tag">花語插畫</div>
+                    </div>
+                    <div class="art-card-details">
+                        <h3 class="art-card-title">白花之詩 · 純白花語</h3>
+                        <p class="art-card-text">盛開山茶花瓣簇擁中，純潔溫柔的 Q 版微笑，滿溢森系花草治癒感。</p>
+                        <div class="art-bottom-meta">
+                            <span class="forest-tag" style="padding: 0.15rem 0.6rem; font-size: 0.75rem;">Q版</span>
+                            <button class="heart-like-btn" title="給這幅作品一個讚">🌸 <span
+                                    class="like-num">194</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artwork 4: Winter Soup & Tangyuan Chibi -->
+                <article class="botanical-art-card" data-category="chibi" data-id="luca-winter-soup">
+                    <div class="art-frame-box">
+                        <img src="../drive_assets/IMG_5597.JPG" alt="冬日雪地熱湯圓 Q版盧卡" class="art-flower-img" loading="lazy"
+                            onerror="this.onerror=null; this.src='https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/profile_links/multiple_images/07aa244f-8444-4d2f-aa76-f7231765fa2c.jpg&width=400';">
+                        <div class="art-corner-tag">冬日暖意</div>
+                    </div>
+                    <div class="art-card-details">
+                        <h3 class="art-card-title">冬日微溫 · 雪地甜湯</h3>
+                        <p class="art-card-text">雪杉林間，捧著冒著白煙的熱騰騰雙色湯圓，軟萌可愛，暖意流淌。</p>
+                        <div class="art-bottom-meta">
+                            <span class="forest-tag" style="padding: 0.15rem 0.6rem; font-size: 0.75rem;">冬日手繪</span>
+                            <button class="heart-like-btn" title="給這幅作品一個讚">🌸 <span
+                                    class="like-num">246</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Artwork 5: Anime Portrait & Capybara -->
+                <article class="botanical-art-card" data-category="portrait" data-id="luca-portrait-capybara">
+                    <div class="art-frame-box">
+                        <img src="../drive_assets/IMG_7206.PNG" alt="少年清眸與頭頂橘子的水豚" class="art-flower-img" loading="lazy"
+                            onerror="this.onerror=null; this.src='https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/icons/ac2f3fcf-22c1-4130-bbe1-41eee5b16a17.jpeg&width=240';">
+                        <div class="art-corner-tag">水豚森林</div>
+                    </div>
+                    <div class="art-card-details">
+                        <h3 class="art-card-title">清眸少年 · 水豚守護</h3>
+                        <p class="art-card-text">褪去鈕扣眼的碧綠眼眸美少年，身旁陪伴著頭頂小橘子的療癒佛系水豚君。</p>
+                        <div class="art-bottom-meta">
+                            <span class="forest-tag" style="padding: 0.15rem 0.6rem; font-size: 0.75rem;">原創人物</span>
+                            <button class="heart-like-btn" title="給這幅作品一個讚">🌸 <span
+                                    class="like-num">312</span></button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ====================================================================
+         Tab Panel 4: 求生者 OC (Dorian Harrold & BFL)
+         ==================================================================== -->
+        <section class="botanical-panel" id="tab-oc" aria-labelledby="tabBtnOc">
+            <div class="forest-card">
+                <div class="card-leaf-header">
+                    <div class="leaf-icon-pill">📖</div>
+                    <h2 class="card-title-text">書籍修復師 · 多里安·哈羅登 (Dorian Harrold)</h2>
+                </div>
+                <p style="margin-bottom: 1.25rem; font-size: 0.98rem;">
+                    第五求生者原創設定。目前跟朋友們在快樂的搞<strong>電競 PA</strong>，請支持我們 <strong>BFL（Band for life）</strong>！
+                </p>
+
+                <div style="display: flex; gap: 0.85rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
+                    <img src="https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/profile_links/multiple_images/595a5723-953c-4a69-bff1-e2d55f9df996.jpeg&width=400"
+                        alt="多里安·哈羅登 插畫 1"
+                        style="width: 130px; height: 130px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--card-border);"
+                        onerror="this.style.display='none';">
+                    <img src="https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/profile_links/multiple_images/553c3817-a302-4513-91fb-2160032c02a1.png&width=400"
+                        alt="多里安·哈羅登 插畫 2"
+                        style="width: 130px; height: 130px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--card-border);"
+                        onerror="this.style.display='none';">
+                    <img src="https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/profile_links/multiple_images/451f57e4-e754-4959-8b5c-bb360fdde0b2.png&width=400"
+                        alt="多里安·哈羅登 插畫 3"
+                        style="width: 130px; height: 130px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--card-border);"
+                        onerror="this.style.display='none';">
+                </div>
+
+                <div
+                    style="background: var(--accent-leaf-subtle); border-radius: var(--radius-sm); padding: 0.85rem 1.15rem; font-size: 0.9rem;">
+                    🌿 「每一本殘損的典籍都棲息著未完的往昔，細心修補，便能讓時光重新流動。」
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+         Tab Panel 5: 光遇旅人檔案 (Sky Children of the Light)
+         ==================================================================== -->
+        <section class="botanical-panel" id="tab-sky" aria-labelledby="tabBtnSky">
+            <div class="forest-card">
+                <div class="card-leaf-header">
+                    <div class="leaf-icon-pill">☁️</div>
+                    <h2 class="card-title-text">光遇 · 雲上花園旅人</h2>
+                </div>
+                <p style="margin-bottom: 1rem; line-height: 1.7; font-size: 0.98rem;">
+                    聖島初入坑到破曉季，遷徙季認真回坑的老旅人。技術雖然很菜，但可以<strong>帶跑圖、收光之翼、獻祭</strong>！<br>
+                    目前身邊有一個可愛的小崽崽，CP 不挑全接受，歡迎來遇境一起看雲海發呆。
+                </p>
+
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <img src="https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/profile_links/multiple_images/1ccf6e8a-72cc-43b4-8e9c-2055cd7cb684.jpeg&width=400"
+                        alt="光遇遊戲截圖 1"
+                        style="width: 130px; height: 130px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--card-border);"
+                        onerror="this.style.display='none';">
+                    <img src="https://prd.resource-api.lit.link/v1/images/resized?image_url=images/creators/c4fa83f4-b3e5-4782-9143-7e3b8a1341ee/profile_links/multiple_images/af58f0b4-5740-4a0f-aad3-4b43dfb1a926.png&width=400"
+                        alt="光遇遊戲截圖 2"
+                        style="width: 130px; height: 130px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--card-border);"
+                        onerror="this.style.display='none';">
+                </div>
+            </div>
+
+            <div class="forest-card" style="margin-top: 1.25rem;">
+                <div class="card-leaf-header">
+                    <div class="leaf-icon-pill">🎵</div>
+                    <h3 class="card-title-text" style="font-size: 1.15rem;">世界計畫 (プロセカ)</h3>
+                </div>
+                <p style="font-size: 0.95rem; color: var(--text-muted);">
+                    淡遊半坑外狀態。CP 主吃<strong>司類</strong>，喜歡<strong>彰寧 CB</strong>，雷點僅不接受天馬司與 LN 的 CP 向。
+                </p>
+            </div>
+        </section>
+
+        <!-- ====================================================================
+         Tab Panel 6: 占卜與水豚 (Interactive Botanical Area)
+         ==================================================================== -->
+        <section class="botanical-panel" id="tab-interactive" aria-labelledby="tabBtnInteractive">
+
+            <!-- Forest Fortune Divination -->
+            <div class="interactive-shrine-box">
+                <h2
+                    style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--text-title); margin-bottom: 0.35rem;">
+                    🔮 先知之眼 · 林間役鳥占卜
+                </h2>
+                <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1rem;">
+                    輕觸靈鳥，聆聽樹梢拂過的今日吉凶與歐氣籤詩
+                </p>
+
+                <div class="leaf-fortune-orb" id="owlStage" title="點擊役鳥搖晃占卜！">
+                    🦉
+                </div>
+
+                <button class="forest-button" id="drawFortuneBtn">
+                    <span>🍃</span><span>抽取今日森林籤</span>
+                </button>
+
+                <div class="fortune-result-plaque" id="fortuneResultBox">
+                    <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--accent-forest); margin-bottom: 0.25rem;"
+                        id="fortuneTitle">
+                        點擊上方按鈕開始占卜
+                    </h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);" id="fortuneText">
+                        伊萊的役鳥正在青蔥枝頭安靜休憩...
+                    </p>
+                </div>
+            </div>
+
+            <!-- Capybara Tangerine Garden -->
+            <div class="interactive-shrine-box" style="margin-top: 1.5rem;">
+                <h2
+                    style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--text-title); margin-bottom: 0.35rem;">
+                    🍊 森林水豚 · 柑橘茶歇
+                </h2>
+                <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1rem;">
+                    輕拍水豚君，在綠意中疊加清甜小橘子～
+                </p>
+
+                <div class="capy-sanctuary">
+                    <div class="citrus-leaves-tower" id="orangeStack">
+                        🍊
+                    </div>
+                    <div class="capy-forest-sprite" id="capybaraAvatar" title="點擊水豚疊橘子！">
+                        🦫
+                    </div>
+                    <p style="font-size: 0.95rem; font-weight: 600; color: var(--text-title);" id="capyStatusText">
+                        水豚君頭頂 1 顆清甜小蜜柑，閉目養神中。
+                    </p>
+                    <button class="forest-button" id="resetOrangeBtn"
+                        style="background: var(--card-bg); color: var(--text-body); font-size: 0.85rem; padding: 0.4rem 1.1rem;">
+                        <span>🔄</span><span>整理柑橘</span>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ====================================================================
+         Tab Panel 7: 樹洞留箋 (Guestbook & Sticky Notes)
+         ==================================================================== -->
+        <section class="botanical-panel" id="tab-guestbook" aria-labelledby="tabBtnGuestbook">
+            <div class="forest-card">
+                <div class="card-leaf-header">
+                    <div class="leaf-icon-pill">💌</div>
+                    <h2 class="card-title-text">林間樹洞 · 同好留箋</h2>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.25rem;">
+                    在微風樹梢下留下想說的話、CP 祝福，或一起為月相優化集氣！
+                </p>
+
+                <form class="treehole-form" id="stickyForm">
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                        <input type="text" class="treehole-input" id="noteName" placeholder="你的稱呼 (例如：林間訪客)"
+                            maxlength="20" style="flex: 1; min-width: 180px;">
+                        <select class="treehole-input" id="noteSticker" style="width: 140px;">
+                            <option value="🌸">🌸 雞蛋花</option>
+                            <option value="🌿">🌿 綠葉</option>
+                            <option value="🌕">🌕 月相</option>
+                            <option value="🦉">🦉 役鳥</option>
+                            <option value="🍊">🍊 蜜柑</option>
+                            <option value="🍵">🍵 抹茶</option>
+                        </select>
+                    </div>
+                    <textarea class="treehole-textarea" id="noteText" rows="3" placeholder="寫下一句溫柔的問候..." required
+                        maxlength="140"></textarea>
+                    <button type="submit" class="forest-button" style="align-self: flex-start;">
+                        <span>📌</span><span>掛上樹枝信箋</span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="treehole-grid" id="stickyWall">
+                <!-- Dynamically rendered notes -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Fullscreen Botanical Lightbox -->
+    <div class="forest-lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="大圖展示彈窗">
+        <div class="lightbox-inner-box">
+            <div class="lightbox-top-bar">
+                <h3 id="lightboxTitle"
+                    style="font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--text-title);">
+                    作品賞析</h3>
+                <button class="tool-circle-btn" id="lightboxClose" aria-label="關閉預覽">✕</button>
+            </div>
+            <div class="lightbox-content-area">
+                <img src="" alt="預覽大圖" class="lightbox-large-photo" id="lightboxImg">
+                <p id="lightboxDesc"
+                    style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.85rem; text-align: center; max-width: 580px;">
+                </p>
+                <div style="margin-top: 1rem;">
+                    <a href="#" download class="forest-button" id="lightboxDownload"
+                        style="font-size: 0.88rem; padding: 0.45rem 1.4rem;">
+                        <span>📥</span><span>下載原圖</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="forest-footer">
+        <div class="container">
+            <p class="footer-botanical-quote">
+                「林中微風吹拂，等待月相優化的路上，願花草常伴你身旁。」
+            </p>
+            <div class="footer-botanical-links">
+                <a href="https://www.threads.net/@plumeria_0.0" target="_blank" rel="noopener noreferrer">Threads
+                    @plumeria_0.0</a>
+                <span>•</span>
+                <a href="https://lit.link/zh-tw/menba0625" target="_blank" rel="noopener noreferrer">Lit.Link
+                    menba0625</a>
+            </div>
+            <p class="footer-copyright">
+                © 門把 · Plumeria 森林花草系個人所 • Botanical Sanctuary
+            </p>
+        </div>
+    </footer>
+
+    <!-- Self-contained Interactive Logic (Falling Petals & Audio & Games) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initPetalsCanvas();
+            initAudioEngine();
+            initSeasonThemeSwitcher();
+            initLunarTracker();
+            initBotanicalTabs();
+            initBotanicalGallery();
+            initLeafDivination();
+            initCapybaraGarden();
+            initTreeHoleGuestbook();
+        });
+
+        /* ----------------------------------------------------------------------
+           1. Falling Plumeria Petals & Leaves Canvas Animation
+           ---------------------------------------------------------------------- */
+        function initPetalsCanvas() {
+            const canvas = document.getElementById('forestPetalsCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let w, h;
+            let petals = [];
+
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Petal {
+                constructor() {
+                    this.reset(true);
+                }
+                reset(initial = false) {
+                    this.x = Math.random() * w;
+                    this.y = initial ? Math.random() * h : -20;
+                    this.size = Math.random() * 8 + 6;
+                    this.speedY = Math.random() * 0.7 + 0.4;
+                    this.speedX = Math.random() * 0.5 - 0.25;
+                    this.rotation = Math.random() * 360;
+                    this.rotSpeed = (Math.random() - 0.5) * 1.5;
+                    this.type = Math.random() > 0.45 ? 'plumeria' : 'leaf';
+                    this.alpha = Math.random() * 0.5 + 0.3;
+                }
+                update() {
+                    this.y += this.speedY;
+                    this.x += this.speedX + Math.sin(this.y * 0.01) * 0.3;
+                    this.rotation += this.rotSpeed;
+                    if (this.y > h + 20 || this.x < -20 || this.x > w + 20) {
+                        this.reset();
+                    }
+                }
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate((this.rotation * Math.PI) / 180);
+                    ctx.globalAlpha = this.alpha;
+
+                    if (this.type === 'plumeria') {
+                        // Soft white/cream petal with yellow center gradient
+                        const grad = ctx.createRadialGradient(0, 0, 1, 0, 0, this.size);
+                        grad.addColorStop(0, '#FFEAA7');
+                        grad.addColorStop(0.4, '#FFFDF0');
+                        grad.addColorStop(1, 'rgba(255, 255, 255, 0.85)');
+                        ctx.fillStyle = grad;
+                        ctx.beginPath();
+                        ctx.ellipse(0, 0, this.size * 0.65, this.size * 1.1, 0, 0, Math.PI * 2);
+                        ctx.fill();
+                    } else {
+                        // Muted sage green leaf
+                        ctx.fillStyle = '#A3B18A';
+                        ctx.beginPath();
+                        ctx.ellipse(0, 0, this.size * 0.4, this.size, 0, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    ctx.restore();
+                }
+            }
+
+            for (let i = 0; i < 28; i++) {
+                petals.push(new Petal());
+            }
+
+            function loop() {
+                ctx.clearRect(0, 0, w, h);
+                petals.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                requestAnimationFrame(loop);
+            }
+            loop();
+        }
+
+        /* ----------------------------------------------------------------------
+           2. Web Audio API Zero-Dependency Sound Engine (Gentle Chimes)
+           ---------------------------------------------------------------------- */
+        let audioCtx = null;
+        let soundEnabled = true;
+
+        function initAudioEngine() {
+            const soundBtn = document.getElementById('soundToggleBtn');
+            const saved = localStorage.getItem('plumeria_forest_sound');
+            if (saved !== null) {
+                soundEnabled = saved === 'true';
+                updateSoundIcon();
+            }
+
+            if (soundBtn) {
+                soundBtn.addEventListener('click', () => {
+                    soundEnabled = !soundEnabled;
+                    localStorage.setItem('plumeria_forest_sound', soundEnabled);
+                    updateSoundIcon();
+                    if (soundEnabled) playForestSound('waterdrop');
+                });
+            }
+        }
+
+        function updateSoundIcon() {
+            const btn = document.getElementById('soundToggleBtn');
+            if (btn) {
+                btn.innerHTML = soundEnabled ? '🔔' : '🔕';
+                btn.setAttribute('title', soundEnabled ? '森林音效已開啟' : '森林音效已靜音');
+            }
+        }
+
+        function getAudioCtx() {
+            if (!audioCtx) {
+                const AudioClass = window.AudioContext || window.webkitAudioContext;
+                if (AudioClass) audioCtx = new AudioClass();
+            }
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            return audioCtx;
+        }
+
+        function playForestSound(type) {
+            if (!soundEnabled) return;
+            const ctx = getAudioCtx();
+            if (!ctx) return;
+            const now = ctx.currentTime;
+
+            try {
+                if (type === 'waterdrop') {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(600, now);
+                    osc.frequency.exponentialRampToValueAtTime(1200, now + 0.09);
+                    gain.gain.setValueAtTime(0.18, now);
+                    gain.gain.exponentialRampToValueAtTime(0.005, now + 0.09);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start(now);
+                    osc.stop(now + 0.09);
+                } else if (type === 'windchime') {
+                    [659.25, 783.99, 987.77, 1318.5].forEach((freq, i) => {
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(freq, now + i * 0.08);
+                        gain.gain.setValueAtTime(0.12, now + i * 0.08);
+                        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.5);
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.start(now + i * 0.08);
+                        osc.stop(now + i * 0.08 + 0.5);
+                    });
+                } else if (type === 'squeak') {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(900, now);
+                    osc.frequency.exponentialRampToValueAtTime(1400, now + 0.05);
+                    osc.frequency.exponentialRampToValueAtTime(700, now + 0.12);
+                    gain.gain.setValueAtTime(0.15, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.12);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start(now);
+                    osc.stop(now + 0.12);
+                }
+            } catch (e) { }
+        }
+
+        /* ----------------------------------------------------------------------
+           3. Theme Switcher (3 Forest Aesthetics)
+           ---------------------------------------------------------------------- */
+        const forestThemes = ['forest', 'moonlight', 'blossom'];
+        let themeIdx = 0;
+
+        function initSeasonThemeSwitcher() {
+            const btn = document.getElementById('themeToggleBtn');
+            const saved = localStorage.getItem('plumeria_forest_theme');
+            if (saved && forestThemes.includes(saved)) {
+                themeIdx = forestThemes.indexOf(saved);
+            }
+            applySeasonTheme(forestThemes[themeIdx]);
+
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    themeIdx = (themeIdx + 1) % forestThemes.length;
+                    const next = forestThemes[themeIdx];
+                    applySeasonTheme(next);
+                    localStorage.setItem('plumeria_forest_theme', next);
+                    playForestSound('waterdrop');
+                });
+            }
+        }
+
+        function applySeasonTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            const btn = document.getElementById('themeToggleBtn');
+            if (btn) {
+                if (theme === 'forest') btn.innerHTML = '🌿';
+                else if (theme === 'moonlight') btn.innerHTML = '🌙';
+                else if (theme === 'blossom') btn.innerHTML = '🌸';
+            }
+        }
+
+        /* ----------------------------------------------------------------------
+           4. Real-time Lunar Phase Days Counter
+           ---------------------------------------------------------------------- */
+        function initLunarTracker() {
+            const counterEl = document.getElementById('lunarDaysCount');
+            if (!counterEl) return;
+            const releaseDate = new Date('2019-10-17T00:00:00');
+
+            function update() {
+                const now = new Date();
+                const diffTime = Math.abs(now - releaseDate);
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                counterEl.textContent = `${diffDays} 天 ${hours} 小時`;
+            }
+            update();
+            setInterval(update, 10000);
+        }
+
+        /* ----------------------------------------------------------------------
+           5. Botanical Tabs
+           ---------------------------------------------------------------------- */
+        function initBotanicalTabs() {
+            const tabBtns = document.querySelectorAll('.leaf-tab-btn');
+            const panels = document.querySelectorAll('.botanical-panel');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const target = btn.getAttribute('data-tab');
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    panels.forEach(p => p.classList.remove('active'));
+
+                    btn.classList.add('active');
+                    const activePanel = document.getElementById(target);
+                    if (activePanel) activePanel.classList.add('active');
+                    playForestSound('waterdrop');
+                });
+            });
+        }
+
+        /* ----------------------------------------------------------------------
+           6. Botanical Art Gallery & Lightbox
+           ---------------------------------------------------------------------- */
+        function initBotanicalGallery() {
+            const filterBtns = document.querySelectorAll('.g-filter-btn');
+            const cards = document.querySelectorAll('.botanical-art-card');
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            const modalTitle = document.getElementById('lightboxTitle');
+            const modalDesc = document.getElementById('lightboxDesc');
+            const modalClose = document.getElementById('lightboxClose');
+            const modalDownload = document.getElementById('lightboxDownload');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.getAttribute('data-filter');
+
+                    cards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    playForestSound('waterdrop');
+                });
+            });
+
+            cards.forEach(card => {
+                const frame = card.querySelector('.art-frame-box');
+                if (frame) {
+                    frame.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const img = card.querySelector('.art-flower-img');
+                        const title = card.querySelector('.art-card-title')?.textContent || '典藏畫作';
+                        const desc = card.querySelector('.art-card-text')?.textContent || '';
+
+                        if (img && modal && modalImg) {
+                            modalImg.src = img.src;
+                            if (modalTitle) modalTitle.textContent = title;
+                            if (modalDesc) modalDesc.textContent = desc;
+                            if (modalDownload) modalDownload.href = img.src;
+                            modal.classList.add('open');
+                            playForestSound('waterdrop');
+                        }
+                    });
+                }
+
+                const heartBtn = card.querySelector('.heart-like-btn');
+                if (heartBtn) {
+                    const cardId = card.getAttribute('data-id') || 'art';
+                    const likeNum = heartBtn.querySelector('.like-num');
+                    let likes = parseInt(localStorage.getItem(`plumeria_forest_like_${cardId}`) || '16', 10);
+                    if (likeNum) likeNum.textContent = likes;
+
+                    heartBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        likes++;
+                        if (likeNum) likeNum.textContent = likes;
+                        localStorage.setItem(`plumeria_forest_like_${cardId}`, likes);
+                        playForestSound('waterdrop');
+                        heartBtn.style.transform = 'scale(1.3)';
+                        setTimeout(() => { heartBtn.style.transform = 'scale(1)'; }, 180);
+                    });
+                }
+            });
+
+            if (modalClose && modal) {
+                modalClose.addEventListener('click', () => {
+                    modal.classList.remove('open');
+                    playForestSound('waterdrop');
+                });
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.remove('open');
+                        playForestSound('waterdrop');
+                    }
+                });
+            }
+        }
+
+        /* ----------------------------------------------------------------------
+           7. Leaf & Owl Divination
+           ---------------------------------------------------------------------- */
+        const forestFortunes = [
+            { title: "🌸 大吉 · 月下花開", text: "今日莊園手感如風輕盈！役鳥精準擋刀護佑，地窖隨處為你盛開！" },
+            { title: "🍃 上吉 · 林間微風", text: "單抽滿載而歸，金光乍現如朝陽初升！願月相優化的執念早日迎來回響！" },
+            { title: "🍵 平安 · 遇境養老", text: "適合在光遇雲野看海、在第五公圖散步摸金，喝杯熱茶，歲月靜好。" },
+            { title: "🕊️ 欣喜 · 糧倉大豐收", text: "黃占 / 愚牙 / 弓氣連夜產糖！西批姐今日被滿滿幸福包圍，身心治癒！" },
+            { title: "⚡ 奇遇 · 電流脈動", text: "巧遇天才發明家盧卡！修機線路通暢無阻，如林間奔流般迅速！" }
+        ];
+
+        function initLeafDivination() {
+            const btn = document.getElementById('drawFortuneBtn');
+            const stage = document.getElementById('owlStage');
+            const title = document.getElementById('fortuneTitle');
+            const text = document.getElementById('fortuneText');
+
+            if (btn && stage) {
+                const trigger = () => {
+                    stage.classList.add('swaying');
+                    playForestSound('windchime');
+                    setTimeout(() => {
+                        stage.classList.remove('swaying');
+                        const rand = forestFortunes[Math.floor(Math.random() * forestFortunes.length)];
+                        if (title) title.textContent = rand.title;
+                        if (text) text.textContent = rand.text;
+                    }, 450);
+                };
+                btn.addEventListener('click', trigger);
+                stage.addEventListener('click', trigger);
+            }
+        }
+
+        /* ----------------------------------------------------------------------
+           8. Capybara Garden Stacker
+           ---------------------------------------------------------------------- */
+        let citrusCount = 1;
+        const maxCitrus = 10;
+
+        function initCapybaraGarden() {
+            const capy = document.getElementById('capybaraAvatar');
+            const stack = document.getElementById('orangeStack');
+            const status = document.getElementById('capyStatusText');
+            const reset = document.getElementById('resetOrangeBtn');
+
+            function render() {
+                if (stack) stack.innerHTML = '🍊'.repeat(citrusCount);
+                if (status) {
+                    if (citrusCount === 1) status.textContent = "水豚君頭頂 1 顆清甜小蜜柑，閉目養神中。";
+                    else if (citrusCount <= 4) status.textContent = `頂著 ${citrusCount} 顆橘子！水豚君沉浸在柑橘香氣中。`;
+                    else if (citrusCount <= 8) status.textContent = `太厲害了！${citrusCount} 顆柑橘塔！水豚君展現了森林平衡神技！🌿`;
+                    else status.textContent = `達到極限 ${citrusCount} 顆！水豚君滿頭果香，幸福放空～✨`;
+                }
+            }
+
+            if (capy) {
+                capy.addEventListener('click', () => {
+                    if (citrusCount < maxCitrus) {
+                        citrusCount++;
+                        playForestSound('squeak');
+                    } else {
+                        playForestSound('waterdrop');
+                    }
+                    render();
+                });
+            }
+
+            if (reset) {
+                reset.addEventListener('click', () => {
+                    citrusCount = 1;
+                    playForestSound('waterdrop');
+                    render();
+                });
+            }
+            render();
+        }
+
+        /* ----------------------------------------------------------------------
+           9. Forest Tree Hole Guestbook
+           ---------------------------------------------------------------------- */
+        const defaultLeaves = [
+            { name: "林間旅人", text: "好喜歡這裡的花草森林氛圍！月相優化我們一起守候！黃占賽高！", time: "剛才", sticker: "🌸" },
+            { name: "光遇老朋友", text: "也是聖島季入坑！看到雲海介紹好親切，祝門把天天開心～", time: "15分鐘前", sticker: "☁️" },
+            { name: "莊園小園丁", text: "畫廊裡的盧卡太好看了，捧湯圓和白茶花好治癒！", time: "1小時前", sticker: "🌿" }
+        ];
+
+        function initTreeHoleGuestbook() {
+            const form = document.getElementById('stickyForm');
+            const wall = document.getElementById('stickyWall');
+
+            function load() {
+                const saved = localStorage.getItem('plumeria_forest_notes');
+                let notes = defaultLeaves;
+                if (saved) {
+                    try { notes = JSON.parse(saved); } catch (e) { notes = defaultLeaves; }
+                }
+                render(notes);
+            }
+
+            function render(notes) {
+                if (!wall) return;
+                wall.innerHTML = '';
+                notes.forEach(note => {
+                    const card = document.createElement('div');
+                    card.className = 'tree-leaf-note';
+                    card.innerHTML = `
+            <div class="note-leaf-sender">
+              <span>${escapeHtml(note.name)}</span>
+              <span>${note.sticker || '🍃'}</span>
+            </div>
+            <p class="note-leaf-body">${escapeHtml(note.text)}</p>
+            <span class="note-leaf-time">${escapeHtml(note.time)}</span>
+          `;
+                    wall.appendChild(card);
+                });
+            }
+
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const nameInput = document.getElementById('noteName');
+                    const textInput = document.getElementById('noteText');
+                    const stickerSelect = document.getElementById('noteSticker');
+
+                    const name = nameInput?.value.trim() || '林間訪客';
+                    const text = textInput?.value.trim() || '';
+                    const sticker = stickerSelect?.value || '🌸';
+                    if (!text) return;
+
+                    const saved = localStorage.getItem('plumeria_forest_notes');
+                    let notes = defaultLeaves;
+                    if (saved) {
+                        try { notes = JSON.parse(saved); } catch (err) { }
+                    }
+
+                    notes.unshift({ name, text, sticker, time: '剛剛' });
+                    localStorage.setItem('plumeria_forest_notes', JSON.stringify(notes));
+                    render(notes);
+                    if (textInput) textInput.value = '';
+                    playForestSound('waterdrop');
+                });
+            }
+
+            load();
+        }
+
+        function escapeHtml(str) {
+            return String(str).replace(/[&<>'"]/g, tag => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[tag] || tag));
+        }
+    </script>
+</body>
+
+</html>
